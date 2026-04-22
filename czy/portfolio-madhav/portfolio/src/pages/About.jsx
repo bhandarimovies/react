@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import { motion } from 'framer-motion'
+import profile from '../profile.jpeg'
 import {
   BriefcaseIcon,
   CodeIcon,
@@ -93,8 +94,12 @@ export default function About() {
               transition={{ delay: 0.2 }}
               className="cyber-card p-6 relative corner-tl corner-br"
             >
-              <div className="w-20 h-20 border-2 border-neon/40 flex items-center justify-center mb-4 relative">
-                <UserIcon className="h-10 w-10 text-neon/60" />
+              <div className="w-24 h-24 overflow-hidden border-2 border-neon/40 mb-4 relative bg-cyber-dark">
+                <img
+                  src={profile}
+                  alt="Madhav Bhandari profile"
+                  className="h-full w-full object-cover"
+                />
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-neon rounded-full animate-pulse" />
               </div>
 
