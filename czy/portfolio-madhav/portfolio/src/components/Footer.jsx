@@ -37,7 +37,7 @@ export default function Footer() {
               />
             </div>
             <span className="hidden sm:block text-sm text-gray-500">
-              <span className="text-neon/60">./</span>madhav-bhandari
+              <span className="text-neon/60">./</span>madhav-བན་དྲ་རི།
             </span>
           </div>
 

@@ -152,7 +152,7 @@ export default function Home() {
               <span className="text-neon/60">// </span>
               BCA student at SRM University Sikkim, passionate about building
               secure applications and exploring the depths of cybersecurity.
-              Currently hunting for vulnerabilities and writing clean code.
+              Currently hunting for vulnerabilities and writing clean code.(ང་གི་མིང་ མ་དྷབ་ བན་ད་རི་ ཨིན། ང་ SRM ཡུ་ནི་བར་སི་ཊི་ སིཀ་ཀིམ་ ལུ་ BCA སློབ་ཕྲུག་ ཨིན། ང་ གློག་རིག་ རྐུ་མཁན་ འབད་ནི་གི་ སེམས་ཡོད།)
             </motion.p>
 
             <motion.div

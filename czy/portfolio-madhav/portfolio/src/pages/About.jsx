@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import { motion } from 'framer-motion'
-import profile from '../profile.jpeg'
+import profile from '../pro.jpg'
 import {
   BriefcaseIcon,
   CodeIcon,
@@ -103,7 +103,7 @@ export default function About() {
                 <div className="absolute -top-1 -right-1 w-3 h-3 bg-neon rounded-full animate-pulse" />
               </div>
 
-              <h2 className="text-neon font-bold text-lg tracking-wider mb-1">Madhav Bhandari</h2>
+              <h2 className="text-neon font-bold text-lg tracking-wider mb-1">མ་དབ་བན་དྲ་རི།</h2>
               <p className="text-gray-500 text-xs mb-4">Aspiring Developer & Cybersecurity Enthusiast</p>
 
               <div className="space-y-2 text-xs text-gray-500">
