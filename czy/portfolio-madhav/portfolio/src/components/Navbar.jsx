@@ -1,15 +1,3 @@
-/**
- * Navbar.jsx - Top navigation bar
- *
- * PROPS:
- *   - darkMode (bool): current dark mode state
- *   - toggleDark (fn): function to toggle dark mode
- *
- * STATE:
- *   - menuOpen (bool): mobile hamburger menu open/close
- *
- * ROUTING: useLocation() to highlight active nav link
- */
 import React, { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -19,8 +7,6 @@ import {
   FolderIcon,
   HomeIcon,
   MailIcon,
-  MoonIcon,
-  SunIcon,
   UserIcon,
 } from './Icons.jsx'
 
@@ -32,7 +18,7 @@ const NAV_LINKS = [
   { path: '/contact', label: 'contact', icon: MailIcon },
 ]
 
-export default function Navbar({ darkMode, toggleDark }) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
@@ -105,15 +91,6 @@ export default function Navbar({ darkMode, toggleDark }) {
           </div>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={toggleDark}
-              title="Toggle theme"
-              className="hidden h-8 w-8 items-center justify-center border border-neon/30 text-neon/60 transition-all hover:border-neon/60 hover:text-neon md:flex"
-              aria-label="Toggle dark mode"
-            >
-              {darkMode ? <SunIcon className="h-4 w-4" /> : <MoonIcon className="h-4 w-4" />}
-            </button>
-
             <button
               onClick={() => setMenuOpen(prev => !prev)}
               className="group flex flex-col gap-1.5 p-2 md:hidden"
