@@ -123,7 +123,7 @@ export default function Resume() {
             </h1>
           </div>
           <a
-            href="/resume.pdf"
+            href="./cv.pdf"
             download
             className="btn-neon inline-flex items-center gap-2 text-xs self-start sm:self-auto"
           >

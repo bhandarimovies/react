@@ -3,7 +3,6 @@
  */
 import React, { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 import {
   AlertTriangleIcon,
   CheckCircleIcon,
@@ -20,12 +19,6 @@ const pageVariants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
-}
-
-const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_asxw3oi',
-  TEMPLATE_ID: 'template_zcleh28',
-  PUBLIC_KEY: 'MCmrVqLcXrnO7HNAC',
 }
 
 const CONTACT_INFO = [
@@ -93,16 +86,17 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      await emailjs.sendForm(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_CONFIG.PUBLIC_KEY
-      )
+      const res = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      if (!res.ok) throw new Error('Failed')
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
     } catch (err) {
-      console.error('EmailJS error:', err)
+      console.error('Backend error:', err)
       setStatus('error')
     }
   }
@@ -308,7 +302,7 @@ export default function Contact() {
                     {status === 'error' && (
                       <div className="border border-red-500/30 bg-red-500/5 p-3 text-xs text-red-400 flex items-center gap-2">
                         <AlertTriangleIcon className="h-4 w-4 flex-shrink-0" />
-                        <span>Failed to send message. Please check your EmailJS configuration or try again.</span>
+                        <span>Failed to send message. Please make sure the backend server is running on port 5000.</span>
                       </div>
                     )}
 
