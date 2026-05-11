@@ -86,13 +86,23 @@ export default function Contact() {
     setStatus('sending')
 
     try {
-      const res = await fetch('http://localhost:5000/api/contact', {
+      const apiBaseUrl = import.meta?.env?.VITE_API_BASE_URL || 'http://localhost:5000'
+      const res = await fetch(`${apiBaseUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
 
-      if (!res.ok) throw new Error('Failed')
+      if (!res.ok) {
+        let details = ''
+        try {
+          details = await res.text()
+        } catch (_) {}
+
+        console.error('Backend returned non-2xx:', res.status, details)
+        throw new Error(details || `Request failed with status ${res.status}`)
+      }
+
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
     } catch (err) {
