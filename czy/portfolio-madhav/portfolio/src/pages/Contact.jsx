@@ -87,6 +87,8 @@ export default function Contact() {
 
     try {
       const apiBaseUrl = import.meta?.env?.VITE_API_BASE_URL || 'http://localhost:5000'
+      console.log('Sending to:', `${apiBaseUrl}/api/contact`)
+      
       const res = await fetch(`${apiBaseUrl}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -106,7 +108,8 @@ export default function Contact() {
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
     } catch (err) {
-      console.error('Backend error:', err)
+      console.error('Backend error:', err.message)
+      console.error('Full error:', err)
       setStatus('error')
     }
   }
