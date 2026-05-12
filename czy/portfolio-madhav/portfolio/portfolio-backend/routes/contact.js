@@ -4,19 +4,20 @@ import Contact from '../models/Contact.js'
 
 const router = express.Router()
 
-const hasEmailConfig = process.env.EMAIL_USER && process.env.EMAIL_PASS
-const transporter = hasEmailConfig
-  ? nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    })
-  : null
-
 router.post('/', async (req, res) => {
   try {
+    // Initialize email transporter when route is called (after .env is loaded)
+    const hasEmailConfig = process.env.EMAIL_USER && process.env.EMAIL_PASS
+    const transporter = hasEmailConfig
+      ? nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
+          },
+        })
+      : null
+
     console.log('📨 Contact request received from:', req.ip)
     const { name, email, message } = req.body
 

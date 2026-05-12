@@ -2,10 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
+
+// Load env FIRST before importing routes
+dotenv.config()
+
 import contactRoute from './routes/contact.js'
 import projectsRoute from './routes/projects.js'
-
-dotenv.config()
 
 const app = express()
 
