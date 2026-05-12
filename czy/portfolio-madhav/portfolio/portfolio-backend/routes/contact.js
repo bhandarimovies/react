@@ -17,11 +17,18 @@ const transporter = hasEmailConfig
 
 router.post('/', async (req, res) => {
   try {
+    console.log('📨 Contact request received from:', req.ip)
     const { name, email, message } = req.body
+
+    // Validate input
+    if (!name || !email || !message) {
+      return res.status(400).json({ message: 'Missing required fields' })
+    }
 
     // Save to MongoDB
     const contact = new Contact({ name, email, message })
     await contact.save()
+    console.log('✅ Saved to MongoDB:', { name, email })
 
     if (transporter) {
       try {
@@ -36,15 +43,17 @@ router.post('/', async (req, res) => {
             <p><b>Message:</b> ${message}</p>
           `,
         })
+        console.log('📧 Email sent successfully')
       } catch (emailErr) {
-        console.error('Email send failed:', emailErr)
+        console.error('❌ Email send failed:', emailErr.message)
       }
     } else {
-      console.warn('EMAIL_USER or EMAIL_PASS not configured. Email notification skipped.')
+      console.warn('⚠️ EMAIL_USER or EMAIL_PASS not configured. Email notification skipped.')
     }
 
     res.status(201).json({ message: 'Message received! ✅' })
   } catch (err) {
+    console.error('❌ Error in contact route:', err.message)
     res.status(500).json({ message: err.message })
   }
 })

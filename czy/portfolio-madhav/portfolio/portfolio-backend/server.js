@@ -14,7 +14,12 @@ if (!process.env.MONGO_URI) {
   process.exit(1)
 }
 
-app.use(cors())
+// CORS configuration - allow all origins
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: false
+}))
 app.use(express.json())
 
 // Routes
