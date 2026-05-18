@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import { motion } from 'framer-motion'
-import profile from '../pro.jpg'
+import profile from '../profile.jpg'
 import {
   BriefcaseIcon,
   CodeIcon,

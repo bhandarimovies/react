@@ -46,6 +46,7 @@ const SKILLS = [
   { name: 'Cybersecurity', color: '#00ff99' },
   { name: 'Networking', color: '#ff6b6b' },
   { name: 'DBMS', color: '#336791' },
+  { name: 'MongoDB', color: '#ff9f1c' },  
 ]
 
 export default function Home() {
@@ -161,14 +162,19 @@ export default function Home() {
               transition={{ delay: 1.2 }}
               className="flex flex-wrap gap-4"
             >
-              <Link to="/projects" className="btn-neon inline-flex items-center gap-2">
+              <Link
+                to="/projects"
+                className="btn-neon inline-flex items-center gap-2"
+                style={{ borderColor: '#00ff9940', color: '#00ff9980' }}
+              >
                 <FolderIcon className="h-4 w-4" />
                 <span>view projects</span>
               </Link>
+              
               <Link
                 to="/contact"
                 className="btn-neon inline-flex items-center gap-2"
-                style={{ borderColor: '#ffffff20', color: '#aaa' }}
+                style={{ borderColor: '#00ff9940', color: '#00ff9980' }}
               >
                 <MailIcon className="h-4 w-4 text-neon" />
                 <span>contact me</span>

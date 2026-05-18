@@ -1,5 +1,6 @@
 import express from 'express'
 import Project from '../models/Project.js'
+import voteRoute from './vote.js'
 
 const router = express.Router()
 
@@ -22,5 +23,8 @@ router.delete('/:id', async (req, res) => {
   await Project.findByIdAndDelete(req.params.id)
   res.json({ message: 'Deleted ✅' })
 })
+
+// voting
+router.use('/:id', voteRoute)
 
 export default router
