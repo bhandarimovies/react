@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { path: '/resume', label: 'resume', icon: FileTextIcon },
   { path: '/projects', label: 'projects', icon: FolderIcon },
   { path: '/contact', label: 'contact', icon: MailIcon },
+  { path: '/admin', label: 'admin', icon: UserIcon },
 ]
 
 export default function Navbar() {

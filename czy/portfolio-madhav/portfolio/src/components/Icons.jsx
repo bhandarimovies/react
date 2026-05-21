@@ -28,6 +28,15 @@ export function HomeIcon(props) {
   )
 }
 
+export function RiUserLine(props) {
+  return (
+    <IconBase {...props}>
+      <circle cx="12" cy="8" r="3.25" />
+      <path d="M5.5 19a6.5 6.5 0 0 1 13 0" />
+    </IconBase>
+  )
+}
+
 export function UserIcon(props) {
   return (
     <IconBase {...props}>
@@ -36,6 +45,7 @@ export function UserIcon(props) {
     </IconBase>
   )
 }
+
 
 export function FileTextIcon(props) {
   return (
@@ -56,6 +66,15 @@ export function FolderIcon(props) {
   )
 }
 
+export function RiMailLine(props) {
+  return (
+    <IconBase {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m4 7 8 6 8-6" />
+    </IconBase>
+  )
+}
+
 export function MailIcon(props) {
   return (
     <IconBase {...props}>
@@ -64,6 +83,7 @@ export function MailIcon(props) {
     </IconBase>
   )
 }
+
 
 export function SunIcon(props) {
   return (
@@ -118,6 +138,64 @@ export function CheckCircleIcon(props) {
     </IconBase>
   )
 }
+
+// Added missing icon exports used by AdminDashboard
+export function RiCheckLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M20 6 9 17l-5-5" />
+    </IconBase>
+  )
+}
+
+export function RiCloseLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M6 6l12 12" />
+      <path d="M18 6L6 18" />
+    </IconBase>
+  )
+}
+
+export function RiAlertLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M12 9v4" />
+      <path d="M12 17h.01" />
+      <path d="m12 3 10 18H2L12 3Z" />
+    </IconBase>
+  )
+}
+
+export function RiLogoutBoxRLine(props) {
+  return (
+    <IconBase {...props}>
+      <rect x="3" y="7" width="18" height="14" rx="2" />
+      <path d="M10 12h11" />
+      <path d="m18 9 3 3-3 3" />
+    </IconBase>
+  )
+}
+
+// Additional missing exports referenced by AdminDashboard
+export function RiEyeLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+      <circle cx="12" cy="12" r="3" />
+    </IconBase>
+  )
+}
+
+export function RiArrowRightSLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M5 12h14" />
+      <path d="m13 6 6 6-6 6" />
+    </IconBase>
+  )
+}
+
 
 export function AlertTriangleIcon(props) {
   return (
@@ -186,11 +264,29 @@ export function CodeIcon(props) {
   )
 }
 
+export function RiShieldCheckLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M12 3 5.5 5.5v5.7c0 4.1 2.8 7.8 6.5 9.3 3.7-1.5 6.5-5.2 6.5-9.3V5.5Z" />
+      <path d="m9.5 12 1.8 1.8 3.4-3.6" />
+    </IconBase>
+  )
+}
+
 export function ShieldIcon(props) {
   return (
     <IconBase {...props}>
       <path d="M12 3 5.5 5.5v5.7c0 4.1 2.8 7.8 6.5 9.3 3.7-1.5 6.5-5.2 6.5-9.3V5.5Z" />
       <path d="m9.5 12 1.8 1.8 3.4-3.6" />
+    </IconBase>
+  )
+}
+
+export function RiCpuLine(props) {
+  return (
+    <IconBase {...props}>
+      <rect x="7" y="7" width="10" height="10" rx="2" />
+      <path d="M9 1.5v3M15 1.5v3M9 19.5v3M15 19.5v3" />
     </IconBase>
   )
 }
@@ -203,6 +299,101 @@ export function CpuIcon(props) {
     </IconBase>
   )
 }
+
+
+export function RiFolder3Line(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v8A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5Z" />
+    </IconBase>
+  )
+}
+
+export function RiDashboardLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M3 12h7V3H3v9Z" />
+      <path d="M14 21V12h7v9h-7Z" />
+      <path d="M14 3h7v9h-7V3Z" />
+      <path d="M3 21v-9h7v9H3Z" />
+    </IconBase>
+  )
+}
+
+export function RiMessage3Line(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z" />
+    </IconBase>
+  )
+}
+
+export function RiAddLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M12 5v14" />
+      <path d="M5 12h14" />
+    </IconBase>
+  )
+}
+
+export function RiEditLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" />
+    </IconBase>
+  )
+}
+
+export function RiDeleteBin6Line(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M21 4H8l-1 2H2" />
+      <path d="M6 6l1 16h10l1-16" />
+      <path d="M10 11v6" />
+      <path d="M14 11v6" />
+    </IconBase>
+  )
+}
+
+export function RiPulseLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M3 12h4l2-6 4 12 2-6h4" />
+    </IconBase>
+  )
+}
+
+export function RiFlashlightLine(props) {
+  return (
+    <IconBase {...props}>
+      <path d="M8 2 6 6l4 2-2 4-4-2 2-4" />
+      <path d="M10 10 21 21" />
+      <path d="M14 14 3 3" />
+    </IconBase>
+  )
+}
+
+export function RiTimeLine(props) {
+  return (
+    <IconBase {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 2" />
+    </IconBase>
+  )
+}
+
+export function RiTerminalBoxLine(props) {
+  return (
+    <IconBase {...props}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m7 10 3 2-3 2" />
+    </IconBase>
+  )
+}
+
+
 
 export function TerminalIcon(props) {
   return (

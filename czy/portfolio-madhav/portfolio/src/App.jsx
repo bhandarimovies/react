@@ -9,6 +9,7 @@ import About from './pages/About.jsx'
 import Resume from './pages/Resume.jsx'
 import Projects from './pages/Projects.jsx'
 import Contact from './pages/Contact.jsx'
+import AdminPanel from './pages/AdminPanel.jsx'
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -20,6 +21,7 @@ function AnimatedRoutes() {
         <Route path="/resume" element={<Resume />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/admin" element={<AdminPanel />} />
       </Routes>
     </AnimatePresence>
   )

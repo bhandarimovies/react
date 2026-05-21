@@ -42,6 +42,17 @@ body {
   text-shadow: 0 0 5px #00ff9960;
 }
 
+/* ── Project Card Group Hover ── */
+.group:hover h3.group-hover\:neon-text-dim {
+  color: #00ff99;
+  text-shadow: 0 0 5px #00ff9960;
+}
+
+/* ── Vote Button Hover Glow ── */
+button:hover {
+  text-shadow: 0 0 5px rgba(0,255,153,0.3);
+}
+
 /* ── Grid Background ── */
 .cyber-grid {
   background-image:

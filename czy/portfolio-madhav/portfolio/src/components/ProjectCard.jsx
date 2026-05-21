@@ -70,11 +70,11 @@ export default function ProjectCard({ project, index }) {
 
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neon/10 text-neon/70">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neon/10 text-neon/70 group-hover:text-neon group-hover:border-neon/40 transition-all">
             <Icon className="h-5 w-5" />
           </span>
           <div>
-            <h3 className="text-neon text-sm font-semibold tracking-wider uppercase group-hover:neon-text-dim transition-all">
+            <h3 className="text-neon text-sm font-semibold tracking-wider uppercase transition-all duration-200 group-hover:neon-text-dim">
               {title}
             </h3>
             {type && (
@@ -90,7 +90,7 @@ export default function ProjectCard({ project, index }) {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-gray-600 hover:text-neon text-xs border border-gray-700 hover:border-neon/50 px-2 py-1 transition-all"
+            className="inline-flex items-center gap-1 text-gray-600 hover:text-neon hover:text-shadow text-xs border border-gray-700 hover:border-neon/50 px-2 py-1 transition-all whitespace-nowrap"
             onClick={e => e.stopPropagation()}
           >
             <ArrowUpRightIcon className="h-3.5 w-3.5" />
@@ -132,7 +132,7 @@ export default function ProjectCard({ project, index }) {
         <div className="flex items-center gap-3 z-20">
           <button
             type="button"
-            className="inline-flex items-center gap-2 text-xs text-gray-400 border border-neon/20 hover:border-neon/50 hover:text-neon bg-black/20 px-3 py-1.5 rounded-sm transition-all"
+            className="inline-flex items-center gap-2 text-xs text-gray-300 font-medium border border-neon/20 hover:border-neon/60 hover:text-neon hover:bg-neon/5 bg-black/30 px-3 py-1.5 rounded-sm transition-all duration-200 hover:shadow-[0_0_8px_rgba(0,255,153,0.2)]"
             style={{ userSelect: 'none' }}
             onClick={async (e) => {
               e.preventDefault()
@@ -161,13 +161,13 @@ export default function ProjectCard({ project, index }) {
             }}
             aria-label="Like"
           >
-            <span className="text-sm leading-none">Like</span>
-            <span className="font-mono">{likesCount}</span>
+            <span className="text-sm leading-none">👍 Like</span>
+            <span className="font-mono text-neon">{likesCount}</span>
           </button>
 
           <button
             type="button"
-            className="inline-flex items-center gap-2 text-xs text-gray-400 border border-neon/20 hover:border-neon/50 hover:text-neon bg-black/20 px-3 py-1.5 rounded-sm transition-all"
+            className="inline-flex items-center gap-2 text-xs text-gray-300 font-medium border border-neon/20 hover:border-neon/60 hover:text-neon hover:bg-neon/5 bg-black/30 px-3 py-1.5 rounded-sm transition-all duration-200 hover:shadow-[0_0_8px_rgba(0,255,153,0.2)]"
             style={{ userSelect: 'none' }}
             onClick={async (e) => {
               e.preventDefault()
@@ -195,8 +195,8 @@ export default function ProjectCard({ project, index }) {
             }}
             aria-label="Dislike"
           >
-            <span className="text-sm leading-none">Dislike</span>
-            <span className="font-mono">{dislikesCount}</span>
+            <span className="text-sm leading-none">👎 Dislike</span>
+            <span className="font-mono text-neon">{dislikesCount}</span>
           </button>
         </div>
       </div>
